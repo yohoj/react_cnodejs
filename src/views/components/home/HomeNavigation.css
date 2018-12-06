@@ -1,0 +1,33 @@
+.HomeNavigation {
+    width: 80%;
+    height: 40px;
+    background-color: rgb(246, 246, 246);
+    margin: 0 auto;
+}
+.HomeNavigation ul{
+    margin-left: 10px;
+    height: 100%;
+    padding-left: 0px;
+}
+.HomeNavigation li{
+    list-style: none;
+    float: left;
+    display: block;
+    margin-left: 20px;
+    color: green;
+    height: 25px;
+    line-height: 25px;
+    font-size: 16px;
+    padding: 3px 4px;
+    border-radius: 3px;
+    margin: 4px;    
+
+}
+.HomeNavigation li:hover{
+    color: blue;
+    cursor: pointer;
+}
+.NavigationBg {
+    background-color: #80bd01;
+    color: #fff;
+}

@@ -1,0 +1,11 @@
+.Home {
+    width: 90%;
+    margin: 20px auto;
+}
+
+.Home>ul{
+    width: 80%;
+    margin: 0 auto;
+    padding-left: 0px;
+    background-color: #fff;
+}

@@ -1,0 +1,40 @@
+.Header {
+    width: 100%;
+    height: 50px;
+    background: #444;
+}
+.Header > div {
+    width: 90%;
+    height: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.Header > div > a{
+    width: 120px;
+    height: 50px;
+    float: left;
+    margin-left: 20px;
+    display: block;
+}
+
+.Header > div > a > img {
+    display: block;
+    margin-top: 10px;
+    width: 100%;
+}
+.Header > div ul {
+    float: right;
+    margin: 0 20px 0 0;
+}
+.Header > div  li {
+    color: aliceblue;
+    margin-left: 20px;
+    float: left;
+    height: 50px;
+    line-height: 50px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    list-style: none;
+}

@@ -1,0 +1,78 @@
+.HomeList {
+    width: 100%;
+    height: 50px;
+    margin: 0 auto;
+}
+li {
+    list-style: none;
+}
+
+img {
+    width: 30px;
+    height: 30px;
+    float: left;
+    margin-top: 10px;
+    margin-left: 10px;
+    /* margin: 20px; */
+}
+.Container {
+    position: absolute;
+    margin: 10px auto;
+    margin-left: 40px;
+}
+.Container p {
+    /* position: absolute; */
+    
+    height: 20px;
+    line-height: 20px;
+    font-size: 15px;
+    float: left;
+    margin-left: 10px;
+    margin-top:5px;
+    margin-bottom: 0;
+}
+
+.Container a {
+    /* position: absolute; */
+    
+    height: 30px;
+    line-height: 30px;
+    font-size: 15px;
+    float: left;
+    margin-left: 10px;
+    text-decoration: none;
+    color: black;
+    /* margin-top: 10px; */
+}
+
+span {
+    /* position: absolute; */
+    float: right;
+    margin-right: 10px;
+    height: 30px;
+    line-height: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.Tab {
+    background-color: #e5e5e5;
+    color: #999;
+    padding: 2px 2px;
+}
+.Good {
+    background-color: #80bd01;
+    color: #fff;
+    padding: 2px 2px;
+}
+.Top {
+    background-color: #80bd01;
+    color: #fff;
+    padding: 2px 2px;
+}
+
+.HomeList hr{
+    width: 100%;
+    height:1px;
+    border:none;
+    border-top:1px dashed grey;
+}
