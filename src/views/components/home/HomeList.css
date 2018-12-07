@@ -3,6 +3,11 @@
     height: 50px;
     margin: 0 auto;
 }
+
+.HomeList:hover{
+    background-color: rgb(246, 246, 246);
+}
+
 li {
     list-style: none;
 }
@@ -17,6 +22,7 @@ img {
 }
 .Container {
     position: absolute;
+    width: 60%;
     margin: 10px auto;
     margin-left: 40px;
 }
@@ -34,7 +40,7 @@ img {
 
 .Container a {
     /* position: absolute; */
-    
+    width: 60%;
     height: 30px;
     line-height: 30px;
     font-size: 15px;
@@ -42,7 +48,10 @@ img {
     margin-left: 10px;
     text-decoration: none;
     color: black;
-    /* margin-top: 10px; */
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+    text-align: left;
 }
 
 span {
@@ -59,6 +68,10 @@ span {
     color: #999;
     padding: 2px 2px;
 }
+.Numbers{
+    width: 100px;
+    text-align: center;
+}
 .Good {
     background-color: #80bd01;
     color: #fff;
@@ -74,5 +87,6 @@ span {
     width: 100%;
     height:1px;
     border:none;
-    border-top:1px dashed grey;
+    border-top:1px solid grey;
+    opacity: 0.5;
 }

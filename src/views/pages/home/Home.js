@@ -11,7 +11,7 @@ export default class Home extends Component{
     constructor(props){
         super(props);
         this.state = {
-            limit: 20,
+            limit: 40,
             data: [],
         };
     }
@@ -19,13 +19,42 @@ export default class Home extends Component{
     onNavigationChange = async (tab) => {
         this.tab = tab;
         this.page = 1;
-        this.setState({tab:tab});
         const {data} = await getTopics({
             tab:this.tab,
             page:this.page,
             limit: this.state.limit,
         });
         this.setState({data:data});
+    }
+
+     onScrollHandle = async (event) => {
+        const sumH =
+             document.body.scrollHeight || document.documentElement.scrollHeight
+        const viewH = document.documentElement.clientHeight
+        const scrollH =
+             document.body.scrollTop || document.documentElement.scrollTop
+        if (viewH + scrollH >= sumH) {
+             this.page++;
+             const {
+                 data
+             } = await getTopics({
+                 tab: this.tab,
+                 page: this.page,
+                 limit: this.state.limit,
+             });
+             this.setState({
+                 data: [...this.state.data,...data]
+             });
+         }
+
+     }
+    
+    componentDidMount() {
+        window.addEventListener('scroll', this.onScrollHandle.bind(this));
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('scroll', this.onScrollHandle.bind(this));
     }
 
     render() {
