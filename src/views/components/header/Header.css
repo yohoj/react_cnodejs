@@ -1,6 +1,6 @@
 .Header {
     width: 100%;
-    height: 50px;
+    min-height: 50px;
     background: #444;
 }
 .Header > div {
@@ -8,33 +8,38 @@
     height: 100%;
     margin: 0 auto;
     text-align: center;
+    display: flex;
+    display: -webkit-flex;
 }
 
 .Header > div > a{
     width: 120px;
     height: 50px;
-    float: left;
     margin-left: 20px;
-    display: block;
 }
 
 .Header > div > a > img {
-    display: block;
     margin-top: 10px;
     width: 100%;
 }
 .Header > div ul {
-    float: right;
-    margin: 0 20px 0 0;
+    width: 90%;
+    margin: 0;
+    text-align: right;
+    padding: 0 0;
 }
 .Header > div  li {
     color: aliceblue;
     margin-left: 20px;
-    float: left;
+    display: inline-block;
     height: 50px;
     line-height: 50px;
     font-size: 15px;
     font-weight: bold;
     cursor: pointer;
     list-style: none;
+}
+
+.Header > div  li:hover{
+    color: antiquewhite;
 }

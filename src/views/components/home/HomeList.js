@@ -16,9 +16,10 @@ export default class HomeList extends Component{
     }
     render() {
         return (
-            <li className="HomeList">
+            <div className="HomeListContainer">
+                <li className="HomeList">
                 <a href='/' title={this._item.author.loginname}>
-                    <img src={this._item.author.avatar_url} alt={this._item.author.loginname}/>
+                    <img className="Icon" src={this._item.author.avatar_url} alt={this._item.author.loginname}/>
                 </a>
                 <div className="Container">
                     <p className="Numbers">{this._item.reply_count + '/' + this._item.visit_count}</p>
@@ -26,8 +27,9 @@ export default class HomeList extends Component{
                     <a className="Title" href="/" title={this._item.title}>{this._item.title}</a>
                 </div>
                 <span>{TimeCalculate(this._item.last_reply_at)}</span>
-                <hr/>
-            </li>
+                </li>
+                <hr className="Hr"/>
+            </div>
         );
     }
 }

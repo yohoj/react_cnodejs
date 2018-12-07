@@ -7,7 +7,6 @@ export default class HomeNavigation extends Component {
                 {tab: 'share', str: '分享'}, 
                 {tab: 'ask', str: '问答'},
                 {tab: 'job', str: '招聘'},
-                {tab: 'test', str: '客户端测试'}
             ];
     constructor(props){
         super(props);
