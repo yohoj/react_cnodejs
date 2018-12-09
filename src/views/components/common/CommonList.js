@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {TimeCalculate} from '../../../utils/Utils';
+import {Link } from "react-router-dom";
 import './CommonList.css'
 export default class CommonList extends Component{
     _item;
@@ -18,9 +19,9 @@ export default class CommonList extends Component{
         return (
             <div className="CommonListContainer">
                 <li className="CommonList">
-                <a href='/' title={this._item.author.loginname}>
+                <Link to='/userInfo' title={this._item.author.loginname}>
                     <img className="Icon" src={this._item.author.avatar_url} alt={this._item.author.loginname}/>
-                </a>
+                </Link>
                 <div className="Container">
                     <p className="Numbers">{this._item.reply_count + '/' + this._item.visit_count}</p>
                     <p className={this._item.good? 'Good' : this._item.top ? 'Top' : 'Tab'}>{this.tabs[this._item.good? 'good': this._item.top ? 'top' : this._item.tab]}</p>
