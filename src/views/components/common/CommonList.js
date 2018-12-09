@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {TimeCalculate} from '../../../utils/Utils';
-import './HomeList.css'
-export default class HomeList extends Component{
+import './CommonList.css'
+export default class CommonList extends Component{
     _item;
     tabs = {
         good: '精华',
@@ -16,8 +16,8 @@ export default class HomeList extends Component{
     }
     render() {
         return (
-            <div className="HomeListContainer">
-                <li className="HomeList">
+            <div className="CommonListContainer">
+                <li className="CommonList">
                 <a href='/' title={this._item.author.loginname}>
                     <img className="Icon" src={this._item.author.avatar_url} alt={this._item.author.loginname}/>
                 </a>

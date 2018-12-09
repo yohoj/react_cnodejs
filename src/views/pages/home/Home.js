@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import HomeNavigation from '../../components/home/HomeNavigation';
-import HomeList from '../../components/home/HomeList';
+import CommonList from '../../components/common/CommonList';
 import {getTopics} from '../../../utils/WebServices';
 import './Home.css';
 
@@ -64,7 +64,7 @@ export default class Home extends Component{
                 <ul>
                     {this.state.data.map(item => {
                         return (
-                            <HomeList key={item.id} item={item}/>
+                            <CommonList key={item.id} item={item}/>
                         )
                     })}
                 </ul>
