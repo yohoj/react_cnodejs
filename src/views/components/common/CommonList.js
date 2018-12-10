@@ -19,7 +19,7 @@ export default class CommonList extends Component{
         return (
             <div className="CommonListContainer">
                 <li className="CommonList">
-                <Link to='/userInfo' title={this._item.author.loginname}>
+                <Link to={`/userInfo/${this._item.author.loginname}`} title={this._item.author.loginname}>
                     <img className="Icon" src={this._item.author.avatar_url} alt={this._item.author.loginname}/>
                 </Link>
                 <div className="Container">

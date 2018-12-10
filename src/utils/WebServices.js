@@ -53,9 +53,9 @@ export const getTopicById = id => {
 }
 
 // 获取用户详情数据
-export const getUserByName = loginname => {
+export const getUserByName = userName => {
   return service({
-    url: `/user/${loginname}`,
+    url: `/user/${userName}`,
     method: 'get'
   })
 }
