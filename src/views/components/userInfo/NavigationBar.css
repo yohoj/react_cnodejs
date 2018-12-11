@@ -10,7 +10,7 @@
 .navigationBar a, .navigationBar span {
     height: 17px;
     line-height: 17px;
-    margin-left: 10px;
     text-align: left;
     margin: 11px 0;
+    margin-left: 10px;
 }

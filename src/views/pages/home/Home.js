@@ -27,7 +27,7 @@ export default class Home extends Component{
         this.setState({data:data});
     }
 
-     onScrollHandle = async (event) => {
+    onScrollHandle = async (event) => {
         const sumH =
              document.body.scrollHeight || document.documentElement.scrollHeight
         const viewH = document.documentElement.clientHeight
@@ -47,7 +47,7 @@ export default class Home extends Component{
              });
          }
 
-     }
+    }
     
     componentDidMount() {
         window.addEventListener('scroll', this.onScrollHandle.bind(this));

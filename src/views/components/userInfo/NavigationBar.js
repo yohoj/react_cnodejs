@@ -12,7 +12,7 @@ export default class NavigationBar extends Component {
     render() {
         return (
             <div className="navigationBar">
-                {this.props.bHome ? <Link to="/">主页</Link>:{}}
+                {this.props.bHome ? <Link to="/">主页</Link>:''}
                 <span>{this.props.title}</span>
             </div>
         );

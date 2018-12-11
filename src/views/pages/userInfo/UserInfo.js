@@ -3,6 +3,7 @@
  */
 import React, { Component } from 'react';
 import Information from "../../components/userInfo/Information";
+import Topics from "../../components/userInfo/Topics";
 import { getUserByName } from "../../../utils/WebServices";
 import './UserInfo.css';
 export default class UserInfo extends Component {
@@ -16,7 +17,6 @@ export default class UserInfo extends Component {
     async componentDidMount() {
         let userName = this.props.match.params.userName;
         const {data} = await getUserByName(userName);
-        console.log(data);
         this.setState({userInfo:data});
         
     }
@@ -26,8 +26,10 @@ export default class UserInfo extends Component {
 
     render() {
         return (
-            <div className="userInfo">
-               <Information/>
+            <div className="UserInfo">
+               <Information userInfo={this.state.userInfo}/>
+               <Topics type="replies" list={this.state.userInfo.recent_replies}/>
+               <Topics type="topics" list={this.state.userInfo.recent_topics}/>
             </div>
         );
     }

@@ -2,7 +2,13 @@ export const TimeCalculate = (str) => {
     let nowTime = new Date().getTime();
     let lastTime = new Date(str).getTime();
     let delay = nowTime - lastTime;
-    if(delay > 24 * 60 * 60 * 1000){
+    if(delay > 365 * 24 *60 * 60 * 1000){
+        return Math.floor(delay / (365 * 24 * 60 * 60 * 1000)) + '年前';
+    }
+    else if(delay > 30 * 24 *60 * 60 * 1000){
+        return Math.floor(delay / (30 * 24 * 60 * 60 * 1000)) + '月前';
+    }
+    else if(delay > 24 * 60 * 60 * 1000){
         return Math.floor(delay / (24 * 60 * 60 * 1000)) + '天前';
     }
     else if(delay > 60 * 60 * 1000){
