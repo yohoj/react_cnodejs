@@ -1,0 +1,45 @@
+.Comment {
+    background-color: #fff;
+    padding: 10px 10px;
+    border-top: 1px solid #f0f0f0;
+}
+
+.Double {
+    background-color: #f4fcf0; 
+}
+
+.Title img {
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    vertical-align: middle
+}
+
+.Title a {
+    display: inline-block;
+    vertical-align: middle;
+    color: #666;
+    margin-left: 3px;
+}
+
+.Floor {
+    margin: 0 0;
+    top: 5px;
+    display: inline-block;
+    text-align: left;
+    margin-left: 5px;
+    width: auto;
+    vertical-align: middle;
+    cursor: pointer;
+    color: #08c;
+    font-size: 11px;
+}
+.Author {
+    color: #fff;
+    background-color: #6ba44e;
+    padding: 2px;
+    font-size: 12px;
+    padding: 0 0;
+    margin-left: 5px;
+
+}

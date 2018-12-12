@@ -25,7 +25,7 @@ export default class CommonList extends Component{
                 <div className="Container">
                     {!!this._item.reply_count ? <p className="Numbers">{this._item.reply_count + '/' + this._item.visit_count}</p> : ''}
                     {!!this._item.tab ? <p className={this._item.good? 'Good' : this._item.top ? 'Top' : 'Tab'}>{this.tabs[this._item.good? 'good': this._item.top ? 'top' : this._item.tab]}</p> : ''}
-                    <a className="Title" href="/" title={this._item.title}>{this._item.title}</a>
+                    <Link className="Title" to={`/content/${this._item.id}`} title={this._item.title}>{this._item.title}</Link>
                 </div>
                 <span>{TimeCalculate(this._item.last_reply_at)}</span>
                 </li>

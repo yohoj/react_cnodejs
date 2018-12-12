@@ -1,3 +1,4 @@
+import React from 'react';
 export const TimeCalculate = (str) => {
     let nowTime = new Date().getTime();
     let lastTime = new Date(str).getTime();
@@ -24,3 +25,8 @@ export const TimeCalculate = (str) => {
         return '刚刚';
     }
 };
+
+export const showHtml = (content) => {
+    var html = {__html:content};
+    return   <div dangerouslySetInnerHTML={html}></div> ;
+}

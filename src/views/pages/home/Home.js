@@ -50,11 +50,11 @@ export default class Home extends Component{
     }
     
     componentDidMount() {
-        window.addEventListener('scroll', this.onScrollHandle.bind(this));
+        window.addEventListener('scroll', this.onScrollHandle);
     }
 
     componentWillUnmount() {
-        window.removeEventListener('scroll', this.onScrollHandle.bind(this));
+        window.removeEventListener('scroll', this.onScrollHandle);
     }
 
     render() {
@@ -64,7 +64,7 @@ export default class Home extends Component{
                 <ul>
                     {this.state.data.map(item => {
                         return (
-                            <CommonList key={item.id} item={item}/>
+                            <CommonList key={`home_${item.id}`} item={item}/>
                         )
                     })}
                 </ul>

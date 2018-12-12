@@ -3,7 +3,7 @@
  */
 import React, {Component} from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Navigation from './NavigationBar';
+import Navigation from '../common/NavigationBar';
 import { TimeCalculate } from '../../../utils/Utils';
 import "./Information.css";
 export default class Information extends Component {

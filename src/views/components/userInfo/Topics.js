@@ -2,7 +2,7 @@
  *Created by yh on 18/12/11.
  */
 import React, {Component} from 'react';
-import Navigation from './NavigationBar';
+import Navigation from '../common/NavigationBar';
 import CommonList from '../common/CommonList';
 import './Topics.css';
 export default class Topics extends Component {
@@ -27,7 +27,7 @@ export default class Topics extends Component {
                     {this.getList().filter((value,index)=>{
                         return index <= 4;
                     }).map(item => {
-                        return <CommonList key={item.id} item={item}/>
+                        return <CommonList key={`topics_${item.id}`} item={item}/>
                     })}
                 </ul>}
             </div>

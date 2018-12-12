@@ -8,6 +8,7 @@ import './App.css';
 import Header from './views/components/header/Header';
 import Home from './views/pages/home/Home';
 import UserInfo from './views/pages/userInfo/UserInfo';
+import Content from './views/pages/content/Content';
 library.add(faStroopwafel,fab);
 class App extends Component {
   render() {
@@ -18,6 +19,7 @@ class App extends Component {
             <div>
                 <Route exact path="/" component={Home}/>
                 <Route path="/userInfo/:userName" component={UserInfo}/>
+                <Route path="/content/:id" component={Content}/>
             </div>
         </HashRouter>
       </div>
