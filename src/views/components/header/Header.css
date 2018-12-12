@@ -8,25 +8,36 @@
     height: 100%;
     margin: 0 auto;
     text-align: center;
-    display: flex;
-    display: -webkit-flex;
+    /* display: flex; */
+    /* display: -webkit-flex; */
 }
 
 .Header > div > a{
     width: 120px;
-    height: 50px;
-    margin-left: 20px;
+    padding: 3px 20px;
+    height: 34px;
+    line-height: 34px;
+    color: #ccc;
+    font-weight: 700;
+    float: left;
 }
 
 .Header > div > a > img {
     margin-top: 10px;
-    width: 100%;
+    width: 120px;
+    height: auto;
 }
 .Header > div ul {
+    /* float: right; */
     width: 90%;
     margin: 0;
     text-align: right;
     padding: 0 0;
+}
+.Header > div ul::after {
+    content: '';
+    display: block;
+    clear: both;
 }
 .Header > div  li {
     color: aliceblue;

@@ -23,7 +23,6 @@ export default class Content extends Component {
     async componentDidMount() {
         let id = this.props.match.params.id;
         const {data} = await getTopicById(id);
-        console.log(data);
         this.setState({data:data});
     }
 
@@ -47,7 +46,6 @@ export default class Content extends Component {
                                 <li>{`${this.state.data.visit_count}次浏览`}</li>
                                 <li>{`来自于${this.tabs[this.state.data.tab]}次浏览`}</li>
                             </ul>
-                            <hr/>
                         </div>
                         {showHtml(this.state.data.content)}
                     </div>   

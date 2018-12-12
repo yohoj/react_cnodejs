@@ -37,3 +37,9 @@ html body{
 a {
     text-decoration: none;
 }
+
+a:hover {
+    text-decoration-style: solid;
+    text-decoration-color: #999;
+    text-decoration-line: underline;
+}

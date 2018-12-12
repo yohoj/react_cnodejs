@@ -5,6 +5,9 @@
 .Detail {
     background-color: #fff;
 }
+.Detail div{
+    border-bottom: 1px solid #e2e2e2;
+}
 .TitleSpan {
     font-size: 22px;
     font-weight: 700;
@@ -14,6 +17,7 @@
     width: 75%;
     line-height: 130%;
     text-align: left;
+    margin-left: 10px;
 }
 .TopSpan {
     width: auto;
@@ -45,6 +49,7 @@
 }
 .markdown-text {
     margin-left: 10px;
+    min-height: 60px;
 }
 .markdown-text p{
     font-size: 15px;
@@ -61,6 +66,26 @@
     /* font-size: 15px; */
     font-weight: 300;
     /* line-height: 1.25; */
+}
+.markdown-text pre.prettyprint {
+    font-size: 14px;
+    border-radius: 0;
+    padding: 0 15px;
+    border: none;
+    margin: 20px -10px;
+    border-width: 1px 0;
+    background: #f7f7f7;
+    -o-tab-size: 4;
+    -moz-tab-size: 4;
+    tab-size: 4;
+}
+.markdown-text pre code {
+    color: inherit;
+    white-space: pre-wrap;
+    background-color: transparent;
+}
+.str {
+    color: #080;
 }
 .CommentList {
     margin-top: 30px;
