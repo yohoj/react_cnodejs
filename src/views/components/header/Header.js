@@ -16,7 +16,7 @@ export default class Header extends Component {
         return (
             <div className="Header">
                 <div>
-                <a href="/">
+                <a href="./">
                     <img
                         src={logo}
                         alt="网站logo"

@@ -48,10 +48,10 @@ render() {
     return ( 
         <div className = {`Comment ${this.props.floor % 2 === 0 ? '' : 'Double'}`} >
             <div className = 'Title'>
-                <Link to={`/userInfo/${this._item.author.loginname}`} title={this._item.author.loginname}>
+                <Link to={`/user/${this._item.author.loginname}`} title={this._item.author.loginname}>
                     <img className="Icon" src={this._item.author.avatar_url} alt={this._item.author.loginname}/>
                 </Link>
-                <Link to={`/userInfo/${this._item.author.loginname}`}>{this._item.author.loginname}</Link>
+                <Link to={`/user/${this._item.author.loginname}`}>{this._item.author.loginname}</Link>
                 <span className="Floor" onClick={this.onClick}>{`${this.props.floor}楼 ${TimeCalculate(this._item.create_at)}`}</span>
                 {this.props.bAuthor ? <span className="Author">作者</span> : ''}
             </div>
