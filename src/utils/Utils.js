@@ -27,6 +27,8 @@ export const TimeCalculate = (str) => {
 };
 
 export const showHtml = (content) => {
+    content = content.replace(/href="\//,'href="./#/');
     var html = {__html:content};
     return   <div dangerouslySetInnerHTML={html}></div> ;
 }
+
