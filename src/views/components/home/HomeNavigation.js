@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
+import { connect } from 'react-redux';
+import { switchHomeTabAction } from '../../../actions';
 import './HomeNavigation.css';
-export default class HomeNavigation extends Component {
+class HomeNavigation extends Component {
     itemList = [
                 {tab: 'all', str: '全部'}, 
                 {tab: 'good', str: '精华'}, 
@@ -9,16 +11,14 @@ export default class HomeNavigation extends Component {
                 {tab: 'job', str: '招聘'},
             ];
     constructor(props){
-        super(props);
-        this.state = {
-            tab: 'all',
-        };
-        this.tabClick();
+        super(props)
+        this.props.callbackParent('all');
     }
 
     onClick = (tab,e)=>{
-        console.log('tab:',tab);
-        this.setState({tab:tab}, this.tabClick);
+        this.props.switchHomeTab(tab);
+        this.props.callbackParent(tab);
+        // this.setState({tab:tab}, this.tabClick);
     }
 
     tabClick = async ()=>{
@@ -26,12 +26,13 @@ export default class HomeNavigation extends Component {
     }
 
     render() {
+        let {tab} = this.props;
         return (
             <div className="HomeNavigation">
                 <ul>
                     {this.itemList.map((item,index) => {
                         return (
-                                <li  key={item.tab} className={this.state.tab === item.tab ? "NavigationBg" : ""} onClick={this.onClick.bind(this,item.tab)}>{item.str}</li>
+                                <li  key={item.tab} className={tab === item.tab ? "NavigationBg" : ""} onClick={this.onClick.bind(this,item.tab)}>{item.str}</li>
                         )
                     })}
                 </ul>
@@ -39,3 +40,23 @@ export default class HomeNavigation extends Component {
         );
     }
 }
+
+function mapStateToProps(state) {
+    return {
+      tab: state.switchHomeTab,
+    }
+  }
+function mapDispatchToProps(dispatch) {
+    return {
+        switchHomeTab: async (tab) => {
+            dispatch(switchHomeTabAction(tab))
+        },
+    }
+  }
+  
+  // Action Creator
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(HomeNavigation)

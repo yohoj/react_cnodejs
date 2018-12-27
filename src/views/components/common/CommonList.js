@@ -19,15 +19,15 @@ export default class CommonList extends Component{
         return (
             <div className="CommonListContainer">
                 <li className="CommonList">
-                <Link to={`/user/${this._item.author.loginname}`} title={this._item.author.loginname}>
-                    <img className="Icon" src={this._item.author.avatar_url} alt={this._item.author.loginname}/>
-                </Link>
-                <div className="Container">
-                    {!!this._item.visit_count ? <p className="Numbers">{this._item.reply_count + '/' + this._item.visit_count}</p> : ''}
-                    {!!this._item.tab ? <p className={this._item.good? 'Good' : this._item.top ? 'Top' : 'Tab'}>{this.tabs[this._item.good? 'good': this._item.top ? 'top' : this._item.tab]}</p> : ''}
-                    <Link className="Title" to={`/content/${this._item.id}`} title={this._item.title}>{this._item.title}</Link>
-                </div>
-                <span>{TimeCalculate(this._item.last_reply_at)}</span>
+                    <Link to={`/user/${this._item.author.loginname}`} title={this._item.author.loginname}>
+                        <img className="Icon" src={this._item.author.avatar_url} alt={this._item.author.loginname}/>
+                    </Link>
+                    <div className="Container">
+                        {!!this._item.visit_count ? <p className="Numbers">{this._item.reply_count + '/' + this._item.visit_count}</p> : ''}
+                        {!!this._item.tab ? <p className={this._item.good? 'Good' : this._item.top ? 'Top' : 'Tab'}>{this.tabs[this._item.good? 'good': this._item.top ? 'top' : this._item.tab]}</p> : ''}
+                        <Link className="Title" to={`/content/${this._item.id}`} title={this._item.title}>{this._item.title}</Link>
+                    </div>
+                    <span>{TimeCalculate(this._item.last_reply_at)}</span>
                 </li>
             </div>
         );

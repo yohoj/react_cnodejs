@@ -59,4 +59,49 @@ export const getUserByName = userName => {
     method: 'get'
   })
 }
+/**
+ *  新建主题 
+ * {accesstoken, title, tab, content}
+ * */
+export const postTopics = (data) => {
+    return service({
+        url: `/topics`,
+        method: 'post',
+        params: data
+      })
+}
+/**
+ * 编辑主题 
+ * {accesstoken, topic_id, title, tab, content}
+ * */
+export const updateTopics = (data)=> {
+    return service({
+        url:`/topics/update`,
+        method: 'post',
+        params: data,
+    });
+    
+}
+/**
+ *  收藏主题 
+ * {accesstoken, topic_id}
+ * */
+export const collectTopics = (data) => {
+    return service({
+        url:`/topic_collect/collect`,
+        method: 'post',
+        params: data,
+    });
+}
+/** 
+ * 取消收藏主题 
+ * { accesstoken, topic_id }
+ * */
+export const deCollectTopics = (data) => {
+    return service({
+        url:`/topic_collect/de_collect`,
+        method: 'post',
+        params: data,
+    });
+}
 

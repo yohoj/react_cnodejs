@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { HashRouter, Route } from 'react-router-dom';
+import { Route, HashRouter } from 'react-router-dom';
 import { library } from '@fortawesome/fontawesome-svg-core';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStroopwafel } from '@fortawesome/free-solid-svg-icons';
@@ -14,17 +14,18 @@ class App extends Component {
   render() {
     return (
         <div className="App">
-        <Header />
-        <HashRouter>
-            <div>
-                <Route exact path="/" component={Home}/>
-                <Route path="/user/:userName" component={UserInfo}/>
-                <Route path="/content/:id" component={Content}/>
-            </div>
-        </HashRouter>
+            <Header />
+            <HashRouter>
+                <div>
+                    <Route exact path="/" component={Home}/>
+                    <Route path="/user/:userName" component={UserInfo}/>
+                    <Route path="/content/:id" component={Content}/>
+                </div>
+            </HashRouter>
       </div>
     );
   }
 }
+
 
 export default App;

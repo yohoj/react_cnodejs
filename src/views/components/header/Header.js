@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import logo from '../../../assets/image/cnodejs.svg';
 import './Header.css';
 export default class Header extends Component {
-    listItems = ['首页','未读消息','新手入门','API','关于','设置','退出'];
+    listItems = ['首页','未读消息','关于','设置','退出'];
     constructor(props){
         super(props);
         this.state = {visible: false};
@@ -16,7 +16,7 @@ export default class Header extends Component {
         return (
             <div className="Header">
                 <div>
-                <a href="./">
+                <a href="/">
                     <img
                         src={logo}
                         alt="网站logo"

@@ -2,29 +2,18 @@ import React, {Component} from 'react';
 import HomeNavigation from '../../components/home/HomeNavigation';
 import CommonList from '../../components/common/CommonList';
 import {getTopics} from '../../../utils/WebServices';
+import {connect} from 'react-redux';
+import { withRouter } from 'react-router-dom';
+import { getTopicsAction } from '../../../actions';
 import './Home.css';
 
 
-export default class Home extends Component{
-    tab = 'all';
-    page = 1;
+class Home extends Component{
     constructor(props){
         super(props);
         this.state = {
-            limit: 40,
             data: [],
         };
-    }
-
-    onNavigationChange = async (tab) => {
-        this.tab = tab;
-        this.page = 1;
-        const {data} = await getTopics({
-            tab:this.tab,
-            page:this.page,
-            limit: this.state.limit,
-        });
-        this.setState({data:data});
     }
 
     onScrollHandle = async (event) => {
@@ -34,17 +23,7 @@ export default class Home extends Component{
         const scrollH =
              document.body.scrollTop || document.documentElement.scrollTop
         if (viewH + scrollH >= sumH) {
-             this.page++;
-             const {
-                 data
-             } = await getTopics({
-                 tab: this.tab,
-                 page: this.page,
-                 limit: this.state.limit,
-             });
-             this.setState({
-                 data: [...this.state.data,...data]
-             });
+             this.props.onScrollHandle();
          }
 
     }
@@ -58,11 +37,12 @@ export default class Home extends Component{
     }
 
     render() {
+        const { data, onNavigationChange} = this.props;
         return (
             <div className='Home'>
-                <HomeNavigation callbackParent={this.onNavigationChange}/>
+                <HomeNavigation callbackParent={onNavigationChange}/>
                 <ul>
-                    {this.state.data.map(item => {
+                    {data.map(item => {
                         return (
                             <CommonList key={`home_${item.id}`} item={item}/>
                         )
@@ -72,3 +52,41 @@ export default class Home extends Component{
         );
     }
 }
+const config = {
+    tab:'all',page:1,limit:40
+}
+function mapStateToProps(state) {
+    return {
+        data: state.getTopics,
+    }
+  }
+function mapDispatchToProps(dispatch) {
+    return {
+        onNavigationChange: async (tab) => {
+            config.tab = tab;
+            config.page = 1;
+            const {data} = await getTopics({
+                tab:config.tab,
+                page:config.page,
+                limit: config.limit,
+            });
+            dispatch(getTopicsAction(data,true))
+        },
+        onScrollHandle: async () => {
+            config.page++;
+            const {data} = await getTopics({
+                tab:config.tab,
+                page:config.page,
+                limit: config.limit,
+            });
+            dispatch(getTopicsAction(data,false))
+        }
+    }
+  }
+  
+  // Action Creator
+
+export default withRouter(connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(Home))
