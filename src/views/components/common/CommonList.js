@@ -27,7 +27,9 @@ export default class CommonList extends Component{
                         {!!this._item.tab ? <p className={this._item.good? 'Good' : this._item.top ? 'Top' : 'Tab'}>{this.tabs[this._item.good? 'good': this._item.top ? 'top' : this._item.tab]}</p> : ''}
                         <Link className="Title" to={`/content/${this._item.id}`} title={this._item.title}>{this._item.title}</Link>
                     </div>
+                    <div className="TimeDiv">
                     <span>{TimeCalculate(this._item.last_reply_at)}</span>
+                    </div>
                 </li>
             </div>
         );
