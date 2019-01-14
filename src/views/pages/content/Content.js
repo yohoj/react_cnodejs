@@ -8,7 +8,6 @@ import NavigationBar from '../../components/common/NavigationBar';
 import Comment from '../../components/content/Comment';
 import { connect } from 'react-redux';
 import { getTopicContentAction } from '../../../actions';
-import { withRouter } from 'react-router-dom';
 import './Content.css';
 
 class Content extends Component {
@@ -78,7 +77,7 @@ function mapDispatchToProps(dispatch) {
   
   // Action Creator
 
-export default withRouter(connect(
+export default connect(
     mapStateToProps,
     mapDispatchToProps
-  )(Content))
+  )(Content)

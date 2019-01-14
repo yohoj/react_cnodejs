@@ -19,3 +19,7 @@ export const switchHomeTabAction = tab => ({
     type: 'SWITCH_HOME_TAB',
     tab,
 });
+export const loginAction = userInfo => ({
+  type: 'LOGIN',
+  userInfo,
+});

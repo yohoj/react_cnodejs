@@ -1,0 +1,16 @@
+.Login {
+  margin: 0 auto;
+}
+.InputDiv{
+  width: 350px;
+  margin: 0 auto;
+}
+
+.InputDiv Input{
+  width: 250px;
+  margin-top: 20px;
+}
+
+.BtnLogin {
+  margin-left: 2px;
+}

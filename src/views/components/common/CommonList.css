@@ -83,7 +83,7 @@ li {
     text-decoration-line: underline;
 }
 
-span {
+.CommonListContainer span {
     width:30%;
     margin-right: 5px;
     height: 30px;

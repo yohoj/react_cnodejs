@@ -46,7 +46,7 @@ onClick = (event) => {
 
 render() {
     return ( 
-        <div className = {`Comment ${this.props.floor % 2 === 0 ? '' : 'Double'}`} >
+        <div className = 'Comment' >
             <div className = 'Title'>
                 <Link to={`/user/${this._item.author.loginname}`} title={this._item.author.loginname}>
                     <img className="Icon" src={this._item.author.avatar_url} alt={this._item.author.loginname}/>

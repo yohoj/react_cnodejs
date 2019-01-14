@@ -4,6 +4,7 @@ import getTopicContent from './getTopicContent';
 import getUserInfo from './getUserInfo';
 import switchHomeTab from './switchHomeTab';
 import changeTab from './changeTab';
+import login from './login';
 
 export default combineReducers({
     getTopics,
@@ -11,4 +12,5 @@ export default combineReducers({
     getTopicContent,
     switchHomeTab,
     changeTab,
+    login,
 })

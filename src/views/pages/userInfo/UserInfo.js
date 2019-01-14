@@ -6,7 +6,6 @@ import Information from "../../components/userInfo/Information";
 import Topics from "../../components/userInfo/Topics";
 import { getUserByName } from "../../../utils/WebServices";
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
 import { getUserInfoAction } from "../../../actions";
 import './UserInfo.css';
 class UserInfo extends Component {
@@ -61,7 +60,7 @@ function mapDispatchToProps(dispatch) {
   }
   
   // Action Creator
-export default withRouter(connect(
+export default connect(
     mapStateToProps,
     mapDispatchToProps
-  )(UserInfo))
+  )(UserInfo)

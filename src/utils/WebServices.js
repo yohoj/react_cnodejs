@@ -105,3 +105,16 @@ export const deCollectTopics = (data) => {
     });
 }
 
+/**
+ * 验证
+ * accesstoken
+ * 
+ */
+export const accessToken = (accesstoken) => {
+  return service({
+    url:`/accesstoken`,
+    method: 'post',
+    params: {accesstoken},
+  })
+}
+
