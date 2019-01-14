@@ -48,7 +48,6 @@ class Header extends Component {
     }
 
     render() {
-      console.log(this.props);
       const index = this.props.userInfo.id ? 0 : 1;
         return (
             <div className="Header">
@@ -76,7 +75,6 @@ class Header extends Component {
 Header.contextTypes = {
   router: PropTypes.object.isRequired
 };
-console.log(Header.contextTypes);
 
 const mapStateToProps = (state) => {
   return {userInfo:state.login}
